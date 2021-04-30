@@ -19,7 +19,7 @@ console.log(fruits);
 
 // Log the element on index 0 and 1
 
-console.log(fruits[0,1]);
+console.log(fruits[0], fruits[1]);
 
 // If the element at 0 index is undefined and index 1 is 'Banana' shift all the values to one lower index (use shift method)
 
@@ -35,8 +35,13 @@ fruits.unshift(`Dragon Fruit`)
 
 // Log true or false based on the value at index 0 and 1 is 'Dragon Fruit' and 'Guava' or not
 
-console.log(fruits.indexOf(`Guava`) === 1);
-console.log(fruits.indexOf(`Dragon Fruit`) === 0);
+if(
+    fruits.indexOf(`Dragon Fruit`) === 0 &&
+    fruits.indexOf(`Guava`) === 1 ) {
+        console.log(true);
+    }else {
+        console.log(false);
+    }
 
 // Update the value of index 1 to `Pears`
 
@@ -57,19 +62,23 @@ let moreFruits = ['Berries', 'Melons'];
 
 // Concat moreFruits into fruits array (re-assign so the value gets updated)
 
-let newFruits = fruits.concat(moreFruits);
+fruits = fruits.concat(moreFruits);
 
 // Log the name of all fruit in console
 
-console.log(newFruits);
+fruits.forEach(element => console.log(element));
 
 // Convert each fruit name to lowercase and log it
 
-
+fruits.forEach(element => console.log(element.toLowerCase()));
 
 // Convert all fruits name into lowercase and store in new array named lowercaseFruits
 
+let lowercaseFruits = fruits.map(element => element.toLowerCase());
+
 // Convert all fruits name into uppercase and store in new array named uppercaseFruits
+
+let uppercaseFruits = fruits.map(element => element.toUpperCase());
 
 let numbers = [1, 2, [3, 4]];
 let numbersTwo = [1, 2, [3, 4, [5, 6]]];
@@ -86,10 +95,13 @@ console.log(numbers.flat(Infinity));
 console.log(numbersTwo.flat(Infinity));
 
 // Convert the numbersThree array to one level element.
+
+console.log(numbersThree.flat(Infinity));
+
 // Remove all sub-arrays to individual elements, log them and update the value of numbersThree to the new flat array.
 
 let newNumberThree = numbersThree.flat(Infinity);
-console.log(newNumberThree);
+newNumberThree.forEach(element => console.log(element));
 
 // Use forEach to log all the elements of numberThree array
 
@@ -117,7 +129,7 @@ let evenNumbers = newNumberThree.filter(x => x % 2 === 0);
 
 // Find the index of 10 in numbersThree array
 
-
+numbersThree.find(element => element === 10);
 
 // Reverse the values of numbersThree array
 
@@ -129,8 +141,8 @@ numbersTwo.reverse();
 
 // Join all fruits with '-', convert to uppercase and log it
 
-console.log(fruits.join('-'));
+console.log(fruits.join('-').toUpperCase());
 
 // Join all fruits with '&', convert to lowercase and log it
 
-console.log(fruits.join('&'));
+console.log(fruits.join('&').toLowerCase());
