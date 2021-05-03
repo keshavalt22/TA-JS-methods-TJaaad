@@ -25,7 +25,8 @@ console.log(strings.join(" "));
 // - Add two new words in the strings array "called" and "sentance"
 
 stringCopy = [...strings];
-stringCopy.push("called", "sentance");
+stringCopy.push("called");
+stringCopy.push( "sentance");
 
 // - Again convert the updated array (strings) into sentance like "This is a collection of words called sentance"
 
@@ -37,11 +38,11 @@ console.log(stringCopy.shift());
 
 // - Find all the words that contain 'is' use string method 'includes'
 
-console.log(strings.includes("is"));
+let allIs = string.filter((string) => string.includes("is"));
 
 // - Find all the words that contain 'is' use string method 'indexOf'
 
-console.log(strings.indexOf("is"));
+let allIsAgain = string.filter((string) => string.indexOf("is") !== -1);
 
 // - Check if all the numbers in numbers array are divisible by three use array method (every)
 
@@ -58,6 +59,8 @@ function compareFunction(a,b) {
 }
 console.log(numberCopy.sort(compareFunction));
 
+numberCopy.sort((a,b) => a - b);
+
 // - Remove the last word in strings
 
 console.log(stringCopy.pop());
@@ -73,8 +76,11 @@ for (var i = 0; i < numbers.length; i++) {
 }
 console.log(largest);
 
+let largestNumber = numbers.sort((a,b) => a = b).pop();
 
 // - Find longest string in strings
+
+let longestString = string.sort((a,b) => a.length - b.length).pop();
 
 // - Find all the even numbers
 
@@ -115,9 +121,14 @@ numbers.splice(numbers.indexOf(18),1,1881);
 
 // - Replace words in strings array with the length of the word
 
-strings.splice(strings.indexOf("words"),1,"word")
+let stringLength = string.map((string) => string.length);
 
 // - Find the sum of the length of words using above question
+
+stringLength.reduce((acc,cv) => {
+  acc = acc + cv;
+  return acc;
+},0);
 
 // - Customers Array
 var customers = [
@@ -128,10 +139,23 @@ var customers = [
 ];
 // - Find all customers whose firstname starts with 'J'
 
+let customersJ = customers.filter((customers) => customers.firstname.startsWith("J"));
+
 // - Create new array with only first name
+
+let customersFistname = customers.map((customers) => customers.firstname);
 
 // - Create new array with all the full names (ex: "Joe Blogs")
 
+let customersFullname = customers.map((customers) => `${customers.firstname} ${customers.lastname}`);
+
 // - Sort the array created above alphabetically
 
+[...customersFullname].sort();
+
 // - Create a new array that contains only user who has at least one vowel in the firstname.
+
+
+let customersVowel = customers.map((customers) => 
+customersFistname.tolowe .includes("a") ||
+);
