@@ -1,12 +1,18 @@
 // NOTE: You can only use the (reduce) array method to solve this exercise:
 
 function countAllPeople() {
-  
+  return got.houses.reduce((acc, cv) => {
+    console.log(acc + cv.people.length)
+    return acc + cv.people.length;
+  }, 0)
 }
 
-function peopleByHouses() {
-  // your code goes here
-}
+// function peopleByHouses() {
+//   return got.houses[0].reduce((acc, cv) => {
+//     console.log(acc + cv.people.length)
+//     return acc + cv.people.length;
+//   }, 0)
+// }
 
 function everyone() {
   // your code goes here
@@ -63,3 +69,86 @@ console.log(surnameWithA());
 console.log(peopleNameOfAllHouses());
 // Output should be
 // {Arryns: ["Jon Arryn"], Baratheons: ["Robert Baratheon", "Stannis Baratheon", "Renly Baratheon", "Joffrey Baratheon", "Tommen Baratheon", "Myrcella Baratheon"], Dothrakis: ["Khal Drogo"], Freys: ["Walder Frey"], Greyjoys: ["Balon Greyjoy", "Theon Greyjoy", "Yara Greyjoy"], Lannisters: ["Tywin Lannister", "Tyrion Lannister", "Jaime Lannister", "Cersei Baratheon"], Redwyne: ["Olenna Tyrell"], Starks: ["Eddard Stark", "Benjen Stark", "Robb Stark", "Sansa Stark", "Arya Stark", "Brandon Stark", "Rickon Stark", "Jon Snow"], Targaryens: ["Daenerys Targaryen", "Viserys Targaryen"], Tullys: ["Catelyn Stark", "Lysa Arryn", "Edmure Tully", "Brynden Tully"], Tyrells: ["Margaery Baratheon", "Loras Tyrell"]}
+
+
+
+
+
+
+
+// Write a function named `addOne` that accepts a number, adds one to the given value and`return` it(hint: use return keyword).
+
+function addOne(num) {
+  return num + 1;
+}
+
+const addOne = function(num) {
+  return num + 1;
+}
+
+const addOne = (num) => num + 1;
+
+const addOne = (num) => {
+  return num + 1;
+}
+ 
+let returnAddOne = addOne(num);
+
+typeof returnAddOne;
+
+
+//Write a function named `oddOrEven` that accepts a`number` and returns
+
+function oddOrEven(num) {
+  if(num % 2 === 0){
+    return (`Even`)
+  }else {
+    return (`Odd`)
+  }
+}
+
+let oddOrEven = function(num) {
+  if(num % 2 === 0){
+    return (`Even`)
+  }else {
+    return (`Odd`)
+  }
+}
+
+let oddOrEven= (num) => (num % 2 === 0) ? (`Even`) : (`Odd`);
+
+let oddOrEven = (num) => {
+  if(num % 2 === 0){
+    return (`Even`)
+  }else {
+    return (`Odd`)
+  }
+}
+
+
+
+function getSum(num1,num2){
+  let sum = 0;
+  for(let i = num1; i < num2; i++){
+    return sum = sum + i
+  }
+}
+
+let sum = 0;
+for(let i = 0; i <= 5; i++){
+  sum = sum + i;
+}
+
+function getSum( a,b )
+{
+  if (a == b){
+    return `${a} Since both are same`
+  } else if ( a < b) {
+    let sum = 0;
+    for(let i = a; i <= b; i++){
+      sum = sum +i
+    }
+    return sum
+  }
+    
+}
