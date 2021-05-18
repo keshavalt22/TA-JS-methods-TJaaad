@@ -11,11 +11,11 @@ let words = [
 
 // - Write a function findLongestWord that takes an array of words and returns the longest word from the array. (Use above array "words" to test it). If there are 2 with the same length, it should return the first occurrence.
 
-function longest(acc, cv){
-  return (acc > cv)
+function findLongestWord(array){
+  return[...array]
+  .sort((a,b) => a.length - b.length)
+  .pop();
 }
-
-let findLongestWord = words.reduce(longest);
 
 
 // - Convert the above array "words" into an array of length of word instead of word.
@@ -44,15 +44,13 @@ words.indexOf("rhythm");
 
 // - Create a new array that contians words not starting with vowel.
 
-function filterOut(word){
-  return words !== word.startsWith("a") || 
-  word.startsWith("e") ||
-  word.startsWith("i") ||
-  word.startsWith("o") ||
-  word.startsWith("u");}
 
-  let startsWithVowel = words.filter(filterOut);
+  let notStartVowel = words.filter((word) => !vowel(word[0]));
+
+
 // - Create a new array that contianse words not ending with vowel
+
+let notEndVowel = words.filter((word) => !vowel(word[word.length - 1]));
 
 let numbers = [6, 12, 1, 18, 13, 16, 2, 1, 8, 10];
 
@@ -60,11 +58,11 @@ let numbers = [6, 12, 1, 18, 13, 16, 2, 1, 8, 10];
 
 
 
-function sumArray(numbers){
-  let sum = 0;
-  for(let number of numbers){
-    return sum = sum + number;
-  }
+function sumArray(array){
+return array.reduce((acc,cv) => {
+  acc = acc + cv;
+  return acc; 
+}, 0);
 }
 
 
@@ -96,14 +94,18 @@ let accendingArray = numbers.sort((a,b) => a - b);
 
 // - Find the sum of the numbers in the array.
 
-let sum = numbers.reduce((acc, cv) => acc + cv);
-
+let sum = numbers.reduce((acc, cv) => {
+  acc = acc + cv;
+  return acc;
+},0);
 //- Write a function averageNumbers that receives an array of numbers and calculate the average of the numbers
 
-let sumOfArray = numbers.reduce((acc, cv) => acc + cv);
 
-function averageNumbers(sumOfArray){
-  return sumOfArray / numbers.length;
+function averageNumbers(array){
+  return array.reduce((acc,cv) => {
+    acc = acc + cv;
+    return acc;
+  }, 0) / array.length
 }
 
 let strings = [
@@ -120,3 +122,11 @@ let strings = [
 ];
 
 // - Write a function averageWordLength that receives an array of words2 and calculate the average length of the words.
+
+function averageWordLength(strings){
+  return strings
+  .map((word) => word.length)
+  .reduce((acc, cv) => {
+    return acc + cv;
+  },0) / strings.length;
+}
