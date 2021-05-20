@@ -1,7 +1,9 @@
 // NOTE: You can only use the (reduce) array method to solve this exercise:
 
 function countAllPeople() {
-  // your code goes here
+  got.houses.forEach((houses) => houses.people) .reduce((acc,cv) => {
+    return acc + cv.people;
+  },0);
 }
 
 function peopleByHouses() {
