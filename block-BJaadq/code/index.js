@@ -1,35 +1,71 @@
 // NOTE: You can not use reduce methods to solve this exercise
 
 function countAllPeople() {
-  for(people of people.)
-}
+  let totalPeople = 0;
+
+  got.houses.forEach((houses) => {
+    totalPeople = totalPeople + houses.people.length;
+  });
+  return totalPeople;
+};
 
 function peopleByHouses() {
-  // your code goes here
+  let final = {};
+
+  got.houses.forEach((houses) => {
+    final[houses.name] = houses.people.length;
+  });
+
+  return final;
 }
 
 function everyone() {
-  // your code goes here
+  let totalNames = [];
+  
+  got.houses.forEach((houses) => {
+    let peopleName = houses.people
+    .map((people) => people.name);
+    totalNames = totalNames.concat(peopleName);
+  });
+
+  return totalNames;
 }
 
 function nameWithS() {
-  // your code goes here
-}
+  let allPeople = everyone();
+  
+  return allPeople.filter((name) => name.includes("s") || name.includes("S"));
+}  
 
 function nameWithA() {
-  // your code goes here
+  let final = everyone();
+
+  return final.filter((name) => name.includes("a") || name.includes("A"));
 }
 
 function surnameWithS() {
-  // your code goes here
+  let final = everyone();
+
+  return final.filter((name) => 
+  name.split(' ')[1].includes("S"));
 }
 
 function surnameWithA() {
-  // your code goes here
+  let final = everyone();
+
+  return final.filter((name) => 
+    name.split(" ")[1].includes("A")
+  );
 }
 
 function peopleNameOfAllHouses() {
-  // your code goes here
+  let final = {};
+  got.houses.forEach((house) =>{
+    final[house.name] = house.people.map(
+      (p) => p.name
+    );
+  });
+  return final;
 }
 
 // Testing your result after writing your function
